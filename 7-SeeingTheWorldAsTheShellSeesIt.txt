@@ -1,1 +1,182 @@
+# Concepts addressed:promt shell redirection directory metacharacter varible
+  ~/command-line-5-8-reyes032$ echo this is a test
+this is a test
+~/command-line-5-8-reyes032$ echo *
+5-WorkingWithCommands.txt 6-Redirection.txt 7-SeeingTheWorldAsTheShellSeesIt.txt 8-AdvancedKeyboardTricks.txt README.md
+~/command-line-5-8-reyes032$ ls
+5-WorkingWithCommands.txt         8-AdvancedKeyboardTricks.txt
+6-Redirection.txt             README.md
+7-SeeingTheWorldAsTheShellSeesIt.txt
+~/command-line-5-8-reyes032$ echo D*
+D*
+~/command-line-5-8-reyes032$ echo W*
+W*
+~/command-line-5-8-reyes032$ echo *T
+*T
+~/command-line-5-8-reyes032$ echo *t
+5-WorkingWithCommands.txt 6-Redirection.txt 7-SeeingTheWorldAsTheShellSeesIt.txt 8-AdvancedKeyboardTricks.txt
+~/command-line-5-8-reyes032$ echo [[:upper:]]*
+README.md
+~/command-line-5-8-reyes032$ echo /usr/local/share
+/usr/local/share
+~/command-line-5-8-reyes032$ echo /usr/*/share
+/usr/local/share
+~/command-line-5-8-reyes032$ echo ~
+/home/runner
+~/command-line-5-8-reyes032$ echo ~foo
+~foo
+~/command-line-5-8-reyes032$ echo $((2 + 2))
+4
+~/command-line-5-8-reyes032$ echo $(($((5**2)) * 3))
+75
+~/command-line-5-8-reyes032$ echo $(((5**2)) * 3))
+bash: syntax error near unexpected token `)'
+~/command-line-5-8-reyes032$ echo $(((5**2) * 3))
+75
+~/command-line-5-8-reyes032$ echo Five divide by two equals $((5/2))
+Five divide by two equals 2
+~/command-line-5-8-reyes032$ echo with $((5%2)) left over.
+with 1 left over.
+~/command-line-5-8-reyes032$ echo Front-{A,B,C,}-Back
+Front-A-Back Front-B-Back Front-C-Back Front--Back
+~/command-line-5-8-reyes032$ echo Number_{1..5}
+Number_1 Number_2 Number_3 Number_4 Number_5
+~/command-line-5-8-reyes032$ echo {01..5}
+01 02 03 04 05
+~/command-line-5-8-reyes032$ echo {01..15}
+01 02 03 04 05 06 07 08 09 10 11 12 13 14 15
+~/command-line-5-8-reyes032$ echo {001..15}
+001 002 003 004 005 006 007 008 009 010 011 012 013 014 015
+~/command-line-5-8-reyes032$ echo {Z..A}
+Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+~/command-line-5-8-reyes032$ echo a{A{1,2},B{3,4}}b
+aA1b aA2b aB3b aB4b
+~/command-line-5-8-reyes032$ mkr Photos
+bash: mkr: command not found
+~/command-line-5-8-reyes032$ mkdir Photos
+~/command-line-5-8-reyes032$ cd Photos
+~/command-line-5-8-reyes032/Photos$ mkdir {2007..2009}-{01..12}
+~/command-line-5-8-reyes032/Photos$ ls
+2007-01  2007-06  2007-11  2008-04  2008-09  2009-02  2009-07  2009-12
+2007-02  2007-07  2007-12  2008-05  2008-10  2009-03  2009-08
+2007-03  2007-08  2008-01  2008-06  2008-11  2009-04  2009-09
+2007-04  2007-09  2008-02  2008-07  2008-12  2009-05  2009-10
+2007-05  2007-10  2008-03  2008-08  2009-01  2009-06  2009-11
+~/command-line-5-8-reyes032/Photos$ echo $USER
+runner
+~/command-line-5-8-reyes032/Photos$ printenv | less
+bash: less: command not found
+~/command-line-5-8-reyes032/Photos$ printenv | more
+LC_ALL=en_US.UTF-8
+LD_LIBRARY_PATH=/home/runner/.apt/usr/lib/x86_64-linux-gnu:/home/runner/
+.apt/usr/lib/i386-linux-gnu:/home/runner/.apt/usr/lib:
+XDG_CONFIG_HOME=/config
+LANG=en_US.UTF-8
+DISPLAY=:0
+REPL_SLUG=command-line-5-8-reyes032
+REPL_IMAGE=gcr.io/marine-cycle-160323/polygott:1611939062
+HOSTNAME=c80083b3be68
+REPL_ID=f2f7c33f-856e-4933-9907-50f7b0d8c5b9
+VIRTUAL_ENV=/opt/virtualenvs/python3
+LANGS=
+USER=runner
+REPL_OWNER=reyes032
+PROMPT_DIRTRIM=2
+PWD=/home/runner/command-line-5-8-reyes032/Photos
+HOME=/home/runner
+CPATH=
+REPLIT_DB_URL=https://kv.repl.it/v0/eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9
+.eyJleHAiOjE2MTM2MTk1NzIsImlhdCI6MTYxMzUwNzk3MiwiaXNzIjoiY29ubWFuIiwiZGF
+0YWJhc2VfaWQiOiJmMmY3YzMzZi04NTZlLTQ5MzMtOTkwNy01MGY3YjBkOGM1YjkifQ.W1QF
+gKqsRpgdMa9gwM-HyZ-v_cYvsa2AHjHHmfsF-egDGJlxYfkAdAfBDQQ6BTKC2idgr-6EEI6C
+4QcUp1Vzdg
+LIBRARY_PATH=/home/runner/.apt/usr/lib/x86_64-linux-gnu:/home/runner/.ap
+t/usr/lib/i386-linux-gnu:/home/runner/.apt/usr/lib:
+APT_OPTIONS=-o debug::nolocking=true -o dir::cache=/tmp/apt/cache -o dir
+::state=/tmp/apt/state -o dir::etc::sourcelist=/tmp/apt/sources/sources.
+list
+TERM=xterm-256color
+REPL_LANGUAGE=python3
+SHLVL=1
+PYTHONPATH=/opt/virtualenvs/python3/lib/python3.8/site-packages
+CPPPATH=
+PATH=/usr/local/go/bin:/opt/virtualenvs/python3/bin:/usr/GNUstep/System/
+Tools:/usr/GNUstep/Local/Tools:/home/runner/.apt/usr/bin:/usr/local/sbin
+:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+~/command-line-5-8-reyes032/Photos$ echo $SUER
 
+~/command-line-5-8-reyes032/Photos$ echo $(ls)
+2007-01 2007-02 2007-03 2007-04 2007-05 2007-06 2007-07 2007-08 2007-09 2007-10 2007-11 2007-12 2008-01 2008-02 2008-03 2008-04 2008-05 2008-06 2008-07 2008-08 2008-09 2008-10 2008-11 2008-12 2009-01 2009-02 2009-03 2009-04 2009-05 2009-06 2009-07 2009-08 2009-09 2009-10 2009-11 2009-12
+~/command-line-5-8-reyes032/Photos$ ls _
+ls: cannot access '_': No such file or directory
+~/command-line-5-8-reyes032/Photos$ ls -l $(which cp)
+-rwxr-xr-x 1 root root 141528 Jan 18  2018 /bin/cp
+~/command-line-5-8-reyes032/Photos$ file $(ls -d /usr/bin/* | grep zip)
+/usr/bin/funzip:     ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=7aa1524b9c858c29db1dba7fa04ae27cdb6c5de4, stripped
+/usr/bin/gpg-zip:    POSIX shell script, ASCII text executable
+/usr/bin/preunzip:   POSIX shell script, ASCII text executable
+/usr/bin/prezip:     POSIX shell script, ASCII text executable
+/usr/bin/prezip-bin: ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=f8e18f9ebb7d911b28c1f11d6db9040819073348, stripped
+/usr/bin/unzip:      ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=ac1eb2744561bfb2319b99ece51815b5caab0dfd, stripped
+/usr/bin/unzipsfx:   ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=306a9fb0ff719f3172c3050e15c9fdd20872b50a, stripped
+/usr/bin/zip:        ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=c828586e6e7cf929500a5b9c04faece9eceed5cc, stripped
+/usr/bin/zipcloak:   ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=6675095584351a4d9e63370ceb1dcce0232c6140, stripped
+/usr/bin/zipdetails: Perl script text executable
+/usr/bin/zipgrep:    POSIX shell script, ASCII text executable
+/usr/bin/zipinfo:    ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 3.2.0, BuildID[sha1]=ac1eb2744561bfb2319b99ece51815b5caab0dfd, stripped
+/usr/bin/zipnote:    ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=9d9a7264805021adae207c5d13fb0ab43a6fb04e, stripped
+/usr/bin/zipsplit:   ELF 64-bit LSB shared object, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, for GNU/Linux 2.6.32, BuildID[sha1]=80f65d65f35b6bb9d37e8074bfa1e01c4b7ce18e, stripped
+~/command-line-5-8-reyes032/Photos$ ls -l 'which cp'
+ls: cannot access 'which cp': No such file or directory
+~/command-line-5-8-reyes032/Photos$ ls -l `which cp`
+-rwxr-xr-x 1 root root 141528 Jan 18  2018 /bin/cp
+~/command-line-5-8-reyes032/Photos$ echo this is a    test
+this is a test
+~/command-line-5-8-reyes032/Photos$ echo The total is $100.00
+The total is 00.00
+~/command-line-5-8-reyes032/Photos$ ls -l two words.txt
+ls: cannot access 'two': No such file or directory
+ls: cannot access 'words.txt': No such file or directory
+~/command-line-5-8-reyes032/Photos$ ls -l "two words.txt"
+ls: cannot access 'two words.txt': No such file or directory
+~/command-line-5-8-reyes032/Photos$ mv "two words.txt" two_words.txt
+mv: cannot stat 'two words.txt': No such file or directory
+~/command-line-5-8-reyes032/Photos$ echo "$USER $((2+2)) $(cal)"
+runner 4    February 2021      
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28                    
+                      
+~/command-line-5-8-reyes032/Photos$ echo this is a    test
+this is a test
+~/command-line-5-8-reyes032/Photos$ "echo this is a    test"
+bash: echo this is a    test: command not found
+~/command-line-5-8-reyes032/Photos$ echo "this is a    test"
+this is a    test
+~/command-line-5-8-reyes032/Photos$ echo $(cal)
+February 2021 Su Mo Tu We Th Fr Sa 1 2 3 4 5 6 7 8 9 10 11 12 13 14 156 17 18 19 20 21 22 23 24 25 26 27 28
+~/command-line-5-8-reyes032/Photos$ echo "$(cal)"
+   February 2021      
+Su Mo Tu We Th Fr Sa  
+    1  2  3  4  5  6  
+ 7  8  9 10 11 12 13  
+14 15 16 17 18 19 20  
+21 22 23 24 25 26 27  
+28                    
+                      
+~/command-line-5-8-reyes032/Photos$ echo text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER
+text /home/runner/*.txt a b foo 4 runner
+~/command-line-5-8-reyes032/Photos$ echo "text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER"
+text ~/*.txt {a,b} foo 4 runner
+~/command-line-5-8-reyes032/Photos$ echo 'text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER'
+text ~/*.txt {a,b} $(echo foo) $((2+2)) $USER
+~/command-line-5-8-reyes032/Photos$ echo "The balance for user $USER is: \$5.00"
+The balance for user runner is: $5.00
+~/command-line-5-8-reyes032/Photos$ mv bad\&filename good_filename
+mv: cannot stat 'bad&filename': No such file or directory
+~/command-line-5-8-reyes032/Photos$ mv bad\&filename good_filename
+mv: cannot stat 'bad&filename': No such file or directory
+~/command-line-5-8-reyes032/Photos$ 
