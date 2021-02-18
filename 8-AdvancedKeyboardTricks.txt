@@ -1,1 +1,43 @@
 
+# Concepts addressed: prompt, shell, redirection, metacharacter
+~/command-line-5-8-Marvalena$ ls l
+lazy_dog.txt   ls-output.txt  ls.txt         
+ls-error.txt   ls.output.txt  
+~/command-line-5-8-Marvalena$  ls ls
+ls: cannot access 'ls': No such file or directory
+~/command-line-5-8-Marvalena$  ls ls-output.txt
+ls-output.txt
+~/command-line-5-8-Marvalena$  ls ls-output.txt 
+5-WorkingWithCommands.txt
+6-Redirection.txt
+7-SeeingTheWorldAsTheShellSeesIt.txt
+8-AdvancedKeyboardTricks.txt
+.git/
+lazy_dog.txt
+ls-error.txt
+ls-output.txt
+ls.output.txt
+ls.txt
+movie.mpeg
+README.md
+.replit
+~/command-line-5-8-Marvalena$  ls Documents
+ls: cannot access 'Documents': No such file or directory
+~/command-line-5-8-Marvalena$ history | more
+    1   ls ls
+    2   ls ls-output.txt
+    3   ls Documents
+    4  history | more
+~/command-line-5-8-Marvalena$ history | grep /usr/bin
+    5  history | grep /usr/bin
+~/command-line-5-8-Marvalena$ !88
+bash: !88: event not found
+~/command-line-5-8-Marvalena$  !5
+ history | grep /usr/bin
+    5  history | grep /usr/bin
+    6   history | grep /usr/bin
+~/command-line-5-8-Marvalena$ $
+bash: $: command not found
+~/command-line-5-8-Marvalena$ 
+~/command-line-5-8-Marvalena$ ls -l /usr/bin > ls-output.txt
+~/command-line-5-8-Marvalena$ 
